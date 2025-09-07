@@ -1,0 +1,63 @@
+/* Center everything using Flexbox */
+body {
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #0b0c2a; /* Deep space background */
+}
+
+/* Space container */
+.space {
+  width: 200px;
+  height: 200px;
+  position: relative;
+}
+
+/* Earth centered */
+.earth {
+  width: 100px;
+  height: 100px;
+  background-color: #3b9eff;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 15px rgba(59, 158, 255, 0.6);
+}
+
+/* Orbit container with animation */
+.orbit {
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: orbit 5s linear infinite;
+}
+
+/* Moon positioned at the top center */
+.moon {
+  width: 30px;
+  height: 30px;
+  background-color: #ccc;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+/* Orbit animation with required transform syntax */
+@keyframes orbit {
+  0% {
+    transform: rotate(0deg) translate(-50%, -50%);
+  }
+  100% {
+    transform: rotate(360deg) translate(-50%, -50%);
+  }
+}
